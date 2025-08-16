@@ -281,6 +281,7 @@ a:hover {
 .slide-background img {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -436,6 +437,7 @@ carousel-indicators {
 .featured-image img {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 8px;
@@ -472,6 +474,7 @@ carousel-indicators {
 .card-image img {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
 }
 
@@ -490,6 +493,7 @@ carousel-indicators {
 .placeholder-image img {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   margin: auto;
 }
 
@@ -2127,12 +2131,13 @@ th {
   }
 
   .nav-logo img {
+    max-width: 100%;
     height: 40px; /* Tamanho reduzido para mobile */
   }
 
   /* Se precisar ajustar a largura também */
   .nav-logo img {
-    max-width: 120px; /* Ajuste conforme necessário */
+    max-width: 100%; /* Ajuste conforme necessário */
   }
 
   .header {
@@ -2142,6 +2147,7 @@ th {
   /* Logo ainda menor quando rolar */
   .navbar.scrolled .nav-logo img {
     height: 35px;
+    max-width: 100%;
   }
 }
 
@@ -2483,5 +2489,6 @@ th {
 /* Ajuste do Logo */
 .nav-logo img {
   transition: all 0.3s ease;
+  max-width: 100%; /* Garante que a imagem não ultrapasse o container */
   height: 50px; /* Tamanho padrão */
 }
