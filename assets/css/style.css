@@ -1959,9 +1959,11 @@ th {
     padding-top: 0; /* Remove padding superior */
   }
 
-  body,
-  .container {
+  body {
     padding-top: 0 !important;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
   }
 
   .details-container {
