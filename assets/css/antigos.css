@@ -1,0 +1,103 @@
+.antigos-header {
+  padding: 5rem;
+}
+
+/* Degradê no topo do card */
+.card .carousel {
+  height: 200px;
+  background: linear-gradient(135deg, #8b4513, #d2691e);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Garantir que as imagens se ajustem */
+.card .carousel-item img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Espaçamento e bordas suaves */
+.card {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-body h5 {
+  font-weight: bold;
+}
+
+.card-body .badge {
+  font-size: 0.85rem;
+  padding: 0.4em 0.8em;
+  border-radius: 1rem;
+}
+
+/* Botão de detalhes */
+.btn-warning {
+  background: linear-gradient(135deg, #d4af37, #e1b941);
+  border: none;
+  font-weight: bold;
+  border-radius: 2rem;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, #c19a2d, #d4af37);
+}
+
+#vehicles-container {
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+
+//==========mobile==========//
+
+@media (max-width: 768px) {
+
+  body, html {
+    overflow-x: hidden;
+  }
+
+  /* Container principal */
+  #vehicles-container {
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Linha que contém os cards */
+  #vehicles-container > .row {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  /* Cada item de coluna */
+  #vehicles-container > .row > [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Card individual */
+  .card {
+    border-radius: 0 !important;
+    border-left: none;
+    border-right: none;
+    box-shadow: none !important;
+  }
+
+  /* Carrossel dentro do card */
+  .carousel {
+    width: 100vw;
+    margin-left: -15px; /* Compensa o padding do container */
+    margin-right: -15px;
+  }
+
+  /* Imagens do carrossel */
+  .carousel-item img {
+    height: 200px !important;
+  }
+}

@@ -1,0 +1,445 @@
+/* ===== RESET AND BASE STYLES ===== */
+/**
+ * Reset básico para garantir consistência entre navegadores
+ * Define box-sizing como border-box para facilitar dimensionamento
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Suaviza o scroll da página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos base para o corpo do documento */
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Container principal para centralização de conteúdo */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== CORE VARIABLES ===== */
+/**
+ * Sistema de design baseado na identidade visual
+ * Organizado por:
+ * - Cores primárias
+ * - Cores secundárias
+ * - Cores neutras
+ * - Cores de status
+ * - Sombras
+ * - Transições
+ */
+:root {
+  /* Cores primárias baseadas no logo */
+  --primary-gold: #d4af37;
+  --primary-silver: #c0c0c0;
+  --primary-dark: #2c2c2c;
+  --primary-brown: #8b4513;
+
+  /* Cores temáticas para categorias */
+  --antigos-primary: #8b4513;
+  --antigos-secondary: #d2691e;
+  --seminovos-primary: #4682b4;
+  --seminovos-secondary: #87ceeb;
+  --vendidos-primary: #696969;
+  --vendidos-secondary: #a9a9a9;
+
+  /* Cores neutras */
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --medium-gray: #6c757d;
+  --dark-gray: #343a40;
+  --black: #000000;
+
+  /* Cores de status */
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --info: #17a2b8;
+
+  /* Sistema de sombras */
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+  /* Transições padrão */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ===== TYPOGRAPHY SYSTEM ===== */
+/**
+ * Sistema tipográfico com escala modular
+ * Baseado em rem para escalabilidade
+ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin-bottom: 1rem;
+  color: var(--medium-gray);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-gold);
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-brown);
+}
+
+/* ===== COMPONENT: HEADER & NAVIGATION ===== */
+/**
+ * Barra de navegação fixa no topo
+ * Comportamento de scroll e estados ativos
+ */
+.header {
+  box-shadow: var(--shadow-medium);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  padding: 1rem 0;
+  background-color: var(--black);
+  transition: background-color var(--transition-medium);
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.035);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.nav-link {
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: var(--transition-medium);
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: var(--primary-gold);
+  color: var(--primary-dark);
+  font-weight: 600;
+  transform: translateY(-2px);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-gold);
+  animation: underline 0.3s ease;
+}
+
+.nav-link.admin-link {
+  background: var(--danger);
+  color: var(--white);
+}
+
+.nav-link.admin-link:hover {
+  background: #c82333;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  padding: 0 10px;
+  transition: var(--transition-medium);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* ===== COMPONENT: HERO CAROUSEL ===== */
+/**
+ * Componente de carrossel hero com:
+ * - Controles de navegação
+ * - Indicadores
+ * - Transições suaves
+ */
+.hero-section {
+  height: 70vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.slide-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4);
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+  max-width: 600px;
+  padding: 2rem;
+}
+
+.slide-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== COMPONENT: CARD SYSTEMS ===== */
+/**
+ * Sistema de cards reutilizável para:
+ * - Categorias
+ * - Veículos
+ * - Eventos
+ * - Sorteios
+ */
+.card {
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition-medium);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.card-image {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-title {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.card-button {
+  background: var(--primary-gold);
+  color: var(--primary-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: var(--transition-medium);
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.card-button:hover {
+  background: var(--primary-brown);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Variantes de card */
+.category-card:hover {
+  transform: translateY(-10px);
+}
+
+.featured-card {
+  border-radius: 10px;
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== UTILITY CLASSES ===== */
+/**
+ * Classes utilitárias para:
+ * - Espaçamento
+ * - Exibição
+ * - Alinhamento
+ * - Cores
+ */
+/* Espaçamento */
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+
+/* Exibição */
+.d-none { display: none; }
+.d-block { display: block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+/* Alinhamento */
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.align-center { align-items: center; }
+
+/* Cores de texto */
+.text-primary { color: var(--primary-gold); }
+.text-secondary { color: var(--medium-gray); }
+.text-success { color: var(--success); }
+
+/* Cores de fundo */
+.bg-primary { background-color: var(--primary-gold); }
+.bg-secondary { background-color: var(--medium-gray); }
+.bg-success { background-color: var(--success); }
+
+/* ===== RESPONSIVE DESIGN ===== */
+/**
+ * Breakpoints:
+ * - 768px: Tablets
+ * - 480px: Celulares
+ */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 100px;
+    flex-direction: column;
+    background-color: var(--primary-dark);
+    width: 100%;
+    text-align: center;
+    transition: var(--transition-medium);
+    box-shadow: var(--shadow-medium);
+    padding: 2rem 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .slide-content h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Layout de grid para 1 coluna em mobile */
+  .grid-mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .slide-content h1 {
+    font-size: 2rem;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+/**
+ * Animações reutilizáveis para:
+ * - Aparecimento de elementos
+ * - Efeitos de hover
+ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underline {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
