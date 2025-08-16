@@ -11,6 +11,7 @@ const currentFilters = {
   marca: null,
   ano: null,
   preco: null,
+  termoBusca: null,
 };
 
 // Função para formatar o preço corretamente (agora dividindo por 100)
@@ -27,8 +28,44 @@ function formatarPreco(valor) {
   });
 }
 
+function configurarBusca() {
+  const searchInput = document.getElementById("search-input");
+  const searchButton = document.getElementById("search-button");
+
+  // Busca ao clicar no ícone
+  searchButton.addEventListener("click", () => {
+    currentFilters.termoBusca = searchInput.value.trim() || null;
+    carregarVeiculos();
+  });
+
+  // Busca ao pressionar Enter
+  searchInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      currentFilters.termoBusca = searchInput.value.trim() || null;
+      carregarVeiculos();
+    }
+  });
+
+  // Busca após parar de digitar (debounce)
+  let timeout;
+  searchInput.addEventListener("input", () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      currentFilters.termoBusca = searchInput.value.trim() || null;
+      carregarVeiculos();
+    }, 500); // 500ms de atraso após parar de digitar
+  });
+}
+
 // Função para aplicar os filtros à query
 function aplicarFiltros(query) {
+  // Filtro por termo de busca (busca em múltiplos campos)
+  if (currentFilters.termoBusca) {
+    const searchTerm = `%${currentFilters.termoBusca}%`;
+    query = query.or(
+      `title.ilike.${searchTerm},brand.ilike.${searchTerm},short_description.ilike.${searchTerm}`
+    );
+  }
   // Filtro por marca (corrigido para usar 'make' ou 'brand' conforme seu banco)
   if (currentFilters.marca) {
     query = query.ilike("brand", `%${currentFilters.marca}%`); // ou .eq('brand', currentFilters.marca)
@@ -277,8 +314,9 @@ function configurarFiltros() {
 
 // Inicializa tudo quando a página carregar
 document.addEventListener("DOMContentLoaded", () => {
+  // Chama a função quando a página carregar
   configurarFiltros();
   carregarVeiculos();
-  // Chama a função quando a página carregar
+  configurarBusca();
   carregarMarcas();
 });
