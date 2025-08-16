@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD - UP7 Antigos</title>
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/assets/css/stylecrudcopy.css" />
+</head>
+
+<body>
+    <h1>Gerenciamento de Veículos - UP7 Antigos</h1>
+
+    <form id="car-form">
+        <!-- Título (max 50 caracteres) -->
+        <div class="form-group">
+            <label for="title">Título*</label>
+            <input type="text" id="title" name="title" required maxlength="50" placeholder="Ex: Fiat Uno 1.0 Fire">
+            <small class="char-count">0/50 caracteres</small>
+        </div>
+
+        <!-- Marca com dropdown + campo "outro" -->
+        <div class="form-group">
+            <label for="brand">Marca*</label>
+            <select id="brand" name="brand" required>
+                <option value="">Selecione uma marca</option>
+                <option value="Audi">Audi</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Fiat">Fiat</option>
+                <option value="Ford">Ford</option>
+                <option value="Honda">Honda</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Renault">Renault</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="outro">Outro</option>
+            </select>
+            <input type="text" id="other_brand" name="other_brand" style="display: none; margin-top: 5px;"
+                placeholder="Digite a marca">
+        </div>
+
+        <!-- Modelo e Versão -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="model">Modelo*</label>
+                <input type="text" id="model" name="model" required placeholder="Ex: Uno">
+            </div>
+            <div class="form-group">
+                <label for="version">Versão</label>
+                <input type="text" id="version" name="version" placeholder="Ex: Way 1.0">
+            </div>
+        </div>
+
+        <!-- Ano, KM e Preço -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="year">Ano*</label>
+                <input type="number" id="year" name="year" required min="1900" max="2099" placeholder="Ex: 2015">
+            </div>
+            <div class="form-group">
+                <label for="km">Quilometragem*</label>
+                <input type="number" id="km" name="km" required placeholder="Ex: 50000">
+            </div>
+            <div class="form-group">
+                <label for="price">Preço*</label>
+                <input type="text" id="price" name="price" required placeholder="R$ 0,00">
+            </div>
+        </div>
+
+        <!-- Combustível, Transmissão e Cor -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="fuel_type">Combustível*</label>
+                <select id="fuel_type" name="fuel_type" required>
+                    <option value="Gasolina">Gasolina</option>
+                    <option value="Álcool">Álcool</option>
+                    <option value="Flex">Flex</option>
+                    <option value="Elétrico">Elétrico</option>
+                    <option value="Híbrido">Híbrido</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="transmission">Transmissão*</label>
+                <select id="transmission" name="transmission" required>
+                    <option value="Manual">Manual</option>
+                    <option value="Automático">Automático</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="color">Cor*</label>
+                <input type="text" id="color" name="color" required placeholder="Ex: Prata">
+            </div>
+        </div>
+
+        <!-- Localização -->
+        <div class="form-group">
+            <label for="location">Localização*</label>
+            <select id="location" name="location" required>
+                <option value="Brasília" selected>Brasília</option>
+                <option value="São Paulo">São Paulo</option>
+                <option value="Rio de Janeiro">Rio de Janeiro</option>
+                <!-- Adicione todas as capitais aqui -->
+                <option value="Outra">Outra cidade</option>
+            </select>
+        </div>
+
+        <!-- Imagem de capa -->
+        <div class="form-group">
+            <label>Imagem de Capa*</label>
+            <div class="upload-group">
+                <input type="text" id="cover_image_url" name="cover_image_url" required
+                    placeholder="URL da imagem de capa" readonly>
+                <button type="button" id="upload-cover-btn" class="upload-btn">Upload Imagem</button>
+            </div>
+            <div id="cover-preview" class="image-preview"></div>
+        </div>
+
+        <!-- Galeria de imagens -->
+        <div class="form-group">
+            <label>Galeria de Imagens</label>
+            <div class="upload-group">
+                <input type="text" id="gallery_urls" readonly placeholder="URLs das Imagens (separadas por vírgula)" />
+                <button type="button" id="upload-gallery-btn" class="upload-btn">Adicionar Imagens</button>
+            </div>
+            <div id="gallery-preview" class="image-preview"></div>
+        </div>
+
+        <!-- Descrições -->
+        <div class="form-group">
+            <label for="short_description">Descrição Curta* (max 200 caracteres)</label>
+            <textarea id="short_description" name="short_description" required maxlength="200"
+                placeholder="Breve descrição do veículo"></textarea>
+            <small class="char-count">0/200 caracteres</small>
+        </div>
+
+        <div class="form-group">
+            <label for="detailed_description">Descrição Detalhada (max 500 caracteres)</label>
+            <textarea id="detailed_description" name="detailed_description" maxlength="500"
+                placeholder="Detalhes completos do veículo"></textarea>
+            <small class="char-count">0/500 caracteres</small>
+        </div>
+
+        <!-- Categoria e Tipo -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="category">Categoria*</label>
+                <select id="category" name="category" required>
+                    <option value="antigo">Antigo</option>
+                    <option value="seminovo">Seminovo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="vehicle_type">Tipo de Veículo*</label>
+                <select id="vehicle_type" name="vehicle_type" required>
+                    <option value="carro">Carro</option>
+                    <option value="moto">Moto</option>
+                    <option value="caminhão">Caminhão</option>
+                    <option value="bicicleta">Bicicleta</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="form-row">
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="is_featured" name="is_featured"> Destaque (máximo 3)
+                </label>
+            </div>
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="is_active" name="is_active" checked> Disponível para venda
+                </label>
+            </div>
+        </div>
+
+        <!-- Botões -->
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">Salvar</button>
+            <button type="button" id="cancel-edit" class="btn-secondary">Cancelar</button>
+        </div>
+    </form>
+
+    <h2>Veículos Cadastrados</h2>
+    <ul id="vehicle-list"></ul>
+
+    <script type="module" src="/assets/js/crudcopy.js"></script>
+</body>
+
+</html>
