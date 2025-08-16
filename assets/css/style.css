@@ -2149,6 +2149,9 @@ th {
     height: 35px;
     max-width: 100%;
   }
+  .social-links {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 480px) {
