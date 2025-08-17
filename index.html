@@ -11,6 +11,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon (formato .ico) -->
+    <link rel="icon" href="/assets/img/favicon.ico/favicon.ico" type="image/x-icon">
+    <!-- Favicon (PNG) -->
+    <link rel="icon" href="/assets/img/favicon.ico/android-icon-96x96.png" type="image/png">
+    <!-- Favicon para Apple -->
+    <link rel="apple-touch-icon" href="/assets/img/favicon.ico/apple-icon-180x180.png">
+    <!-- Favicon para Windows/Android -->
+    <meta name="msapplication-TileImage" content="/assets/img/favicon.ico/ms-icon-144x144.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap JS  -->
@@ -36,19 +44,24 @@
     <div class="mobile-bottom-nav">
         <a href="index.html" class="mobile-nav-item active">
             <i class="fas fa-home"></i>
-            <span>Home</span>
         </a>
         <a href="antigos.html" class="mobile-nav-item">
             <i class="fas fa-car"></i>
-            <span>Antigos</span>
         </a>
         <a href="seminovos.html" class="mobile-nav-item">
             <i class="fas fa-car-side"></i>
-            <span>Semi-novos</span>
+        </a>
+        <a href="vendidos.html" class="mobile-nav-item">
+            <i class="fas fa-check-circle"></i>
+        </a>
+        <a href="videos.html" class="mobile-nav-item">
+            <i class="fas fa-video"></i>
         </a>
         <a href="eventos.html" class="mobile-nav-item">
             <i class="fas fa-calendar-alt"></i>
-            <span>Eventos</span>
+        </a>
+        <a href="sorteios.html" class="mobile-nav-item">
+            <i class="fas fa-gift"></i>
         </a>
     </div>
 
@@ -88,8 +101,8 @@
             <div class="carousel-container">
                 <div class="carousel-slide active">
                     <div class="slide-content">
-                        <h1>Bem-vindo à UP7 Antigos</h1>
-                        <p>Especialistas em carros antigos e seminovos de qualidade</p>
+                        <h1>Bem-vindo à <br><span class="destaque">UP7 Antigos</span></h1>
+                        <p>Especialistas em carros antigos <br> e seminovos de qualidade</p>
                         <a href="vendidos.html" class="cta-button">Ver Catálogo</a>
                     </div>
                     <div class="slide-background slide-bg-1">
@@ -98,8 +111,8 @@
                 </div>
                 <div class="carousel-slide">
                     <div class="slide-content">
-                        <h1>Carros Antigos Únicos</h1>
-                        <p>Descubra peças raras e clássicos atemporais</p>
+                        <h1>Carros Antigos<br><span class="destaque">Únicos</span></h1>
+                        <p>Descubra peças raras <br>e clássicos atemporais</p>
                         <a href="antigos.html" class="cta-button">Explorar Antigos</a>
                     </div>
                     <div class="slide-background slide-bg-2">
@@ -108,8 +121,8 @@
                 </div>
                 <div class="carousel-slide">
                     <div class="slide-content">
-                        <h1>Seminovos Selecionados</h1>
-                        <p>Qualidade garantida em cada veículo</p>
+                        <h1>Seminovos <br><span class="destaque">Selecionados</span></h1>
+                        <p>Qualidade garantida <br> em cada veículo</p>
                         <a href="seminovos.html" class="cta-button">Ver Seminovos</a>
                     </div>
                     <div class="slide-background slide-bg-3">
@@ -212,10 +225,19 @@
                 <div class="footer-section">
                     <h4>Links Úteis</h4>
                     <ul>
-                        <li><a href="antigos.html">Carros Antigos</a></li>
-                        <li><a href="seminovos.html">Seminovos</a></li>
-                        <li><a href="eventos.html">Eventos</a></li>
-                        <li><a href="videos.html">Vídeos</a></li>
+                        <li><a href="antigos.html">
+                                <i class="fas fa-car"></i>
+                                <span>Carros Antigos</span>
+                            </a></li>
+                        <li><a href="seminovos.html">
+                                <i class="fas fa-car-side"></i>
+                                <span>Semi-novos</span>
+                            </a></li>
+                        <li><a href="eventos.html">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Eventos</span>
+                            </a></li>
+                        <li><a href="videos.html"><i class="fas fa-video"></i> Vídeos</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
