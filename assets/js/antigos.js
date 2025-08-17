@@ -57,6 +57,17 @@ function configurarBusca() {
   });
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const filterToggle = document.querySelector(".mobile-filter-toggle");
+  const filtersContainer = document.querySelector(".filters-container");
+
+  if (filterToggle && filtersContainer) {
+    filterToggle.addEventListener("click", function () {
+      filtersContainer.classList.toggle("active");
+    });
+  }
+});
+
 // Função para aplicar os filtros à query
 function aplicarFiltros(query) {
   // Filtro por termo de busca (busca em múltiplos campos)
