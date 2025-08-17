@@ -306,6 +306,20 @@ a:hover {
   );
 }
 
+.destaque {
+  color: #ffcc00;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  text-align: center;
+  justify-content: center;
+}
+
+.destaque:hover {
+  color: #ffdd33;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+
 .slide-content {
   position: absolute;
   top: 50%;
@@ -323,6 +337,13 @@ a:hover {
   font-size: 3.5rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.slide-content h1 br {
+  display: none;
+}
+
+.slide-content p br {
+  display: none;
 }
 
 .slide-content p {
@@ -632,7 +653,7 @@ carousel-indicators {
 .antigos-header {
   position: relative;
   overflow: hidden;
-  padding: 3rem 1rem; /* Ajuste o espaçamento conforme necessário */
+  padding: 3rem 1rem;
   text-align: center;
 }
 
@@ -655,7 +676,7 @@ carousel-indicators {
   z-index: 1;
 }
 
-.seminovos-header {
+.vendidos-header {
   background: linear-gradient(
     135deg,
     var(--seminovos-primary),
@@ -663,16 +684,52 @@ carousel-indicators {
   );
 }
 
-.vendidos-header {
-  background: linear-gradient(
-    135deg,
-    var(--vendidos-primary),
-    var(--vendidos-secondary)
-  );
+/* Garante que o conteúdo fique por cima do fundo */
+.vendidos-header * {
+  position: relative;
+  z-index: 1;
 }
 
 .videos-header {
   background: linear-gradient(135deg, var(--primary-dark), var(--medium-gray));
+}
+
+/* Imagem desfocada + gradiente */
+.vendidos-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://forbes.com.br/wp-content/uploads/2023/01/7fb09de1ed5102152e23ed30df8bc8820402e595.jpg")
+      center/cover no-repeat;
+  filter: blur(4px);
+  transform: scale(1.05); /* evita bordas visíveis no blur */
+  z-index: 0;
+}
+
+.videos-header * {
+  position: relative;
+  z-index: 1;
+}
+
+.vendidos-header {
+  background: linear-gradient(
+    135deg,
+    var(--seminovos-primary),
+    var(--seminovos-secondary)
+  );
+}
+
+/* Imagem desfocada + gradiente */
+.videos-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://i.ibb.co/Z6D3M037/image.png") center/cover no-repeat;
+  filter: blur(4px);
+  transform: scale(1.05); /* evita bordas visíveis no blur */
+  z-index: 0;
 }
 
 .eventos-header {
@@ -701,17 +758,33 @@ carousel-indicators {
 }
 
 /* ===== FILTERS SECTION ===== */
+
 .filters-section {
   padding: 2rem 0;
   background: var(--white);
   border-bottom: 1px solid #eee;
 }
 
+.mobile-filter-toggle {
+  display: none;
+  background: none;
+  color: var(--primary-gold);
+  border: none;
+  padding: 10px 10px 5px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.mobile-filter-toggle i {
+  margin-right: 0;
+}
+
 .filters-container {
   display: flex;
-  gap: 2rem;
+  gap: 15px;
   align-items: center;
   flex-wrap: wrap;
+  transition: all 0.3s ease;
 }
 
 .filter-group {
@@ -2002,15 +2075,44 @@ th {
 
   .slide-content h1 {
     font-size: 2.5rem;
+    padding: 0 15rem;
+    text-align: center;
+  }
+
+  .slide-content h1 br {
+    display: block;
+  }
+
+  .slide-content p br {
+    display: block;
   }
 
   .page-header h1 {
     font-size: 2rem;
+    padding: 0 15px;
+    margin: 0 15px;
   }
 
   .filters-container {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
     flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin-top: 10px;
     align-items: stretch;
+  }
+
+  .filters-container.active {
+    display: flex;
+    max-height: 500px;
+  }
+
+  .mobile-filter-toggle {
+    display: block;
   }
 
   .filter-group {
@@ -2040,6 +2142,10 @@ th {
   .steps-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+
+  .slide-content h1 p {
+    width: 50%;
   }
 
   .dashboard-stats {
@@ -2102,7 +2208,7 @@ th {
   }
   /* Ajusta o padding do conteúdo */
   main {
-    padding-bottom: 70px; /* Espaço para o menu inferior */
+    padding-bottom: 10px; /* Espaço para o menu inferior */
   }
 
   .container-fluid {
@@ -2149,6 +2255,7 @@ th {
     height: 35px;
     max-width: 100%;
   }
+
   .social-links {
     flex-direction: column;
   }
@@ -2494,4 +2601,10 @@ th {
   transition: all 0.3s ease;
   max-width: 100%; /* Garante que a imagem não ultrapasse o container */
   height: 50px; /* Tamanho padrão */
+}
+
+@media (min-width: 769px) {
+  .filters-container {
+    display: flex !important;
+  }
 }
