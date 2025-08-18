@@ -1,76 +1,153 @@
-/* Imagens no preview do formulário */
-.preview-image {
-  max-width: 100px;
-  max-height: 80px;
-  margin: 5px;
+/* ===== SEU CSS ATUALIZADO ===== */
+:root {
+  --primary-gold: #d4af37;
+  --primary-dark: #2c2c2c;
+  --antigos-primary: #8b4513;
+  --light-gray: #f8f9fa;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-gray);
+  color: var(--primary-dark);
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2 {
+  color: var(--antigos-primary);
+  border-bottom: 2px solid var(--primary-gold);
+  padding-bottom: 10px;
+}
+
+/* Estilos do formulário melhorados */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 15px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-gold);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Botões estilizados */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--antigos-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #7a3a10;
+}
+
+.btn-secondary {
+  background-color: var(--light-gray);
+  color: var(--primary-dark);
+  border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+  background-color: #e9ecef;
+}
+
+/* Upload de imagens melhorado */
+.upload-group {
+  display: flex;
+  gap: 10px;
+}
+
+.upload-btn {
+  white-space: nowrap;
+  border-radius: 4px;
+  background-color: var(--primary-gold);
+  padding: 10px 15px;
+}
+
+.image-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.image-preview img {
+  width: 100px;
+  height: 100px;
   object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
 }
 
-/* Thumbnails na listagem */
-.thumbnail {
-  max-width: 80px;
-  max-height: 60px;
-  margin-top: 8px;
-  border: 1px solid #eee;
-  border-radius: 3px;
-  object-fit: cover;
+.form-actions {
+  padding-bottom: 20px;
 }
 
-.image-container {
-  margin-top: 5px;
+/* Lista de veículos */
+#vehicle-list {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-/* Para garantir que o layout não quebre */
 #vehicle-list li {
   display: flex;
   padding: 10px;
   margin: 8px 0;
   background: #f9f9f9;
   border-radius: 4px;
+  border: 2px solid #ddd;
+  border-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Container principal do preview */
-#preview-container {
-  margin: 15px 0;
-  padding: 10px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border: 1px dashed #ccc;
-}
-
-/* Estilo para quando não há imagens */
-#preview-container:empty::after {
-  content: "Nenhuma imagem selecionada";
-  color: #6c757d;
-  font-style: italic;
-}
-
-/* Estilo das imagens no preview */
-.preview-image {
-  width: 100px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 4px;
-  border: 1px solid #dee2e6;
-  transition: transform 0.2s;
-}
-
-.preview-image:hover {
-  transform: scale(1.05);
-}
-
-/* Estilos para o preview de imagens */
-#preview-container {
-  margin: 15px 0;
-  padding: 10px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border: 1px dashed #ccc;
-}
-
-/* Estilos para a listagem de veículos */
 .vehicle-item {
   display: flex;
   align-items: center;
@@ -86,8 +163,8 @@
 }
 
 .vehicle-thumbnail {
-  width: 100px;
-  height: 80px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 4px;
   margin: 0 10px;
@@ -95,6 +172,15 @@
 
 .vehicle-actions button {
   margin-left: 5px;
+  background-color: #87ceeb;
+  color: #333;
+  padding: 8px 20px;
+  border-radius: 12px;
+  font-size: 15pt;
+  margin-left: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  border-color: #4682b4;
 }
 
 .featured-badge {
@@ -107,29 +193,6 @@
   display: inline-block;
 }
 
-.vehicle-image-container {
-  position: relative;
-  width: 120px;
-  height: auto;
-}
-
-.sold-banner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: rotate(-15deg);
-  color: white;
-  font-weight: bold;
-  font-size: 1.2em;
-  text-transform: uppercase;
-}
-
 .vehicle-item.sold {
   opacity: 0.8;
   background: #f8f8f8;
@@ -139,44 +202,170 @@
   color: #999;
 }
 
-.form-group {
-  margin: 10px 0;
+.checkbox-container {
+  display: flex;
+  gap: 30px;
+  margin: 1.5rem 0;
 }
 
-.form-group label {
+.modern-checkbox {
   display: flex;
   align-items: center;
-  gap: 8px;
+  position: relative;
   cursor: pointer;
+  user-select: none;
+  padding-left: 32px;
+  min-height: 24px;
 }
 
-.upload-group {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.upload-btn {
-  padding: 8px 15px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
+.modern-checkbox input {
+  position: absolute;
+  opacity: 0;
   cursor: pointer;
-  transition: background-color 0.3s;
+  height: 0;
+  width: 0;
 }
 
-.upload-btn:hover {
-  background-color: #45a049;
-}
-
-.image-preview {
-  margin: 10px 0;
-}
-
-#cover-preview img {
-  max-width: 200px;
-  max-height: 150px;
+.checkmark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 24px;
+  width: 24px;
+  background-color: var(--white);
+  border: 2px solid var(--primary-gold);
   border-radius: 4px;
-  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.modern-checkbox:hover input ~ .checkmark {
+  background-color: #f8f8f8;
+}
+
+.modern-checkbox input:checked ~ .checkmark {
+  background-color: var(--antigos-primary);
+  border-color: var(--antigos-primary);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.modern-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-label {
+  margin-left: 8px;
+  font-weight: 500;
+  color: var(--primary-dark);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  .vehicle-thumbnail,
+  .cover-preview-img,
+  .preview-img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+  }
+
+  h1,
+  p,
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .upload-group {
+    flex-direction: column;
+  }
+
+  .form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .checkbox-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .modern-checkbox {
+    padding-left: 28px;
+  }
+
+  .checkmark {
+    height: 20px;
+    width: 20px;
+  }
+
+  .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+  }
+
+  #vehicle-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #vehicle-list li {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .vehicle-item {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .vehicle-content {
+    padding-bottom: 15px;
+  }
 }
