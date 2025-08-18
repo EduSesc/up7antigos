@@ -9,11 +9,16 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--light-gray);
-  color: var(--primary-dark);
+  background: url("assets/img/logo3.svg") no-repeat center center fixed;
+  background-size: 100%; /* ajuste o tamanho da logo */
+  background-blend-mode: lighten; /* mescla a imagem com o fundo */
   line-height: 1.6;
   padding: 0;
   margin: 0;
+}
+
+.space {
+  padding: 25px 0px;
 }
 
 h1,
@@ -172,7 +177,7 @@ textarea:focus {
 
 .vehicle-actions button {
   margin-left: 5px;
-  background-color: #87ceeb;
+  background-color: #d4af37;
   color: #333;
   padding: 8px 20px;
   border-radius: 12px;
@@ -270,6 +275,88 @@ textarea:focus {
   color: var(--primary-dark);
 }
 
+/* ===== CAROUSEL DINÂMICO ===== */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000; /* fundo para evitar "buracos" ao trocar slides */
+}
+
+.carousel-slide {
+  display: none;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Botões de navegação */
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  pointer-events: none; /* evita bloquear clique na imagem */
+}
+
+.carousel-btn {
+  pointer-events: auto; /* permite clique apenas nos botões */
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+  background: #d4af37;
+}
+
+/* Indicadores (bolinhas) */
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-indicators .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.carousel-indicators .indicator.active {
+  background: var(--primary-gold, #d4af37);
+  transform: scale(1.3);
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   html,
@@ -284,7 +371,7 @@ textarea:focus {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0;
-    padding: 0;
+    padding-top: 50px;
   }
 
   .vehicle-thumbnail,
@@ -367,5 +454,22 @@ textarea:focus {
 
   .vehicle-content {
     padding-bottom: 15px;
+  }
+
+  .carousel-container {
+    border-radius: 0; /* ocupa toda a tela no mobile */
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 60vh; /* limita altura para caber no celular */
+    object-fit: cover;
+  }
+
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
   }
 }
