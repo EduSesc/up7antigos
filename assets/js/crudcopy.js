@@ -1,5 +1,3 @@
-// == arquivo completo: app-cars.js ==
-
 // IMPORT SUPABASE (ESM)
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
