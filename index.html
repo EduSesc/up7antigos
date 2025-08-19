@@ -27,6 +27,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Estilo -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 
 <body>
@@ -281,6 +282,21 @@
         </div>
     </footer>
 
+    <div id="promo-banner" class="promo-banner">
+        <div class="promo-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <img src="/assets/img/promo/dia_dos_pais.jpg" alt="Promoção Pais" class="promo-image">
+            <a href="https://wa.me/5561985804280?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20promoção"
+                class="whatsapp-btn" onclick="window.open(this.href, '_blank'); return false;"
+                rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                    class="whatsapp-icon">
+                Chamar no WhatsApp
+            </a>
+
+        </div>
+    </div>
+
     <script type="module">
         import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
@@ -369,6 +385,7 @@
         document.addEventListener('DOMContentLoaded', loadFeaturedCars)
     </script>
     <script defer src="assets/js/script.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
