@@ -2608,3 +2608,44 @@ th {
     display: flex !important;
   }
 }
+
+
+
+
+/* ===== CRUD STYLES ===== */
+
+.crud-form {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-light);
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.vehicle-list-modern {
+  list-style: none;
+  padding: 0;
+}
+
+.vehicle-list-modern .vehicle-item {
+  background: var(--white);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
