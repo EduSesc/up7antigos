@@ -84,6 +84,7 @@
                     <a href="videos.html" class="nav-link">Vídeos</a>
                     <a href="eventos.html" class="nav-link">Eventos</a>
                     <a href="sorteios.html" class="nav-link">Sorteios</a>
+                    <a href="admin.html" class="nav-link admin-link">Admin</a>
                 </div>
                 <div class="nav-actions">
                     <!-- Botão WhatsApp -->
@@ -282,20 +283,19 @@
         </div>
     </footer>
 
-    <div id="promo-banner" class="promo-banner">
-        <div class="promo-content">
-            <span class="close-btn" id="close-btn">&times;</span>
-            <img src="/assets/img/promo/dia_dos_pais.jpg" alt="Promoção Pais" class="promo-image">
-            <a href="https://wa.me/5561985804280?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20promoção"
-                class="whatsapp-btn" onclick="window.open(this.href, '_blank'); return false;"
-                rel="noopener noreferrer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
-                    class="whatsapp-icon">
-                Chamar no WhatsApp
-            </a>
-
-        </div>
+<div id="promo-banner" class="promo-banner">
+    <div class="promo-content">
+        <span class="close-btn" id="close-btn">&times;</span>
+        <img id="promo-image" src="/assets/img/promo/dia_dos_pais.jpg" alt="Promoção Pais" class="promo-image">
+        <a id="whatsapp-link" href="https://wa.me/5561985804280?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20promoção"
+            class="whatsapp-btn" onclick="window.open(this.href, '_blank'); return false;"
+            rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                class="whatsapp-icon">
+            Chamar no WhatsApp
+        </a>
     </div>
+</div>
 
     <script type="module">
         import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
