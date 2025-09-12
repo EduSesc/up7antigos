@@ -1,0 +1,250 @@
+/* Search Mobile - escondido no desktop */
+.nav-search-mobile {
+  display: none;
+  flex: 10;
+  margin: 0 15px;
+}
+
+.search-input-mobile {
+  width: 100%;
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.search-input-container {
+  position: relative; /* Permite posicionar o ícone dentro */
+  width: 100%;
+  max-width: 300px; /* Ajuste conforme necessário */
+}
+
+.search-icon {
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  background: transparent;
+  border: none;
+  padding: 0 15px 0 0;
+  cursor: pointer;
+  font-size: 16px; /* Tamanho do ícone */
+}
+
+.search-icon:hover {
+  color: #495057;
+}
+
+.nav-whatsapp {
+  display: block;
+  flex-shrink: 0;
+}
+
+.whatsapp-header {
+  font-size: 24px;
+  color: #25d366;
+}
+
+.antigos-header {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0 0 0;
+  text-align: center;
+}
+
+/* Degradê no topo do card */
+.card .carousel {
+  height: 200px;
+  background: linear-gradient(135deg, #8b4513, #d2691e);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Garantir que as imagens se ajustem */
+.card .carousel-item img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Espaçamento e bordas suaves */
+.card {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-body h5 {
+  font-weight: bold;
+}
+
+.card-body .badge {
+  font-size: 0.85rem;
+  padding: 0.4em 0.8em;
+  border-radius: 1rem;
+}
+
+/* Botão de detalhes */
+.btn-warning {
+  background: linear-gradient(135deg, #d4af37, #e1b941);
+  border: none;
+  font-weight: bold;
+  border-radius: 2rem;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, #c19a2d, #d4af37);
+}
+
+#vehicles-container {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+/* Esconde o input de busca no desktop */
+.mobile-search-container {
+  display: none;
+  flex: 1;
+  margin: 0 15px;
+}
+
+.mobile-search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+//==========mobile==========//
+
+@media (max-width: 768px) {
+  body,
+  html {
+    overflow-x: hidden;
+  }
+
+  .nav-container {
+    padding: 10px 15px;
+  }
+
+  /* Esconde menu desktop e whatsapp */
+  .nav-menu-desktop,
+  .nav-whatsapp {
+    display: none !important; /* Força a esconder */
+  }
+
+  /* Mostra search mobile */
+  .nav-search-mobile {
+    display: block;
+  }
+
+  /* Mostra botão mobile se quiser */
+  .mobile-menu-toggle {
+    display: block;
+    margin-left: 15px;
+  }
+
+  /* Ajusta logo */
+  .logo {
+    height: 35px;
+  }
+
+  .container h1 {
+    margin-top: 70px;
+
+  }
+
+  /* Container principal */
+  #vehicles-container {
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Linha que contém os cards */
+  #vehicles-container > .row {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  /* Cada item de coluna */
+  #vehicles-container > .row > [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Card individual */
+  .card {
+    border-radius: 0 !important;
+    border-left: none;
+    border-right: none;
+    box-shadow: none !important;
+  }
+
+  /* Carrossel dentro do card */
+  .carousel {
+    width: 100vw;
+    margin-left: -15px; /* Compensa o padding do container */
+    margin-right: -15px;
+  }
+
+  /* Imagens do carrossel */
+  .carousel-item img {
+    height: 200px !important;
+  }
+
+  .nav-menu,
+  .nav-actions {
+    display: none;
+  }
+
+  .mobile-search-container {
+    display: block;
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .nav-logo {
+    margin-right: 10px;
+    padding: 0;
+  }
+
+  /* Opcional: ajuste o tamanho da logo no mobile */
+  .logo {
+    max-height: 40px;
+    width: auto;
+  }
+}
+
+/* Search Mobile - escondido no desktop */
+.nav-search-mobile {
+  display: none;
+  flex: 1;
+  margin: 0 15px;
+}
+
+.search-input-mobile {
+  width: 100%;
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* Versão Mobile */
+@media (max-width: 768px) {
+  /* Mostra search mobile */
+  .nav-search-mobile {
+    display: flex;
+    padding: 0 10px;
+  }
+}

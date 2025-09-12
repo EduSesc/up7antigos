@@ -1,0 +1,135 @@
+/* Container com fundo */
+.seminovos-header {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0 0 0;
+  text-align: center;
+}
+
+.seminovos-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://blog.sgatoyota.com.br/wp-content/uploads/2023/04/seminovos-que-mais-se-valorizavam.jpg")
+      center/cover no-repeat;
+  filter: blur(4px);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+.card .carousel {
+  height: 200px;
+  background: linear-gradient(135deg, #8b4513, #d2691e);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Garantir que as imagens se ajustem */
+.card .carousel-item img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Espaçamento e bordas suaves */
+.card {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-body h5 {
+  font-weight: bold;
+}
+
+.card-body .badge {
+  font-size: 0.85rem;
+  padding: 0.4em 0.8em;
+  border-radius: 1rem;
+}
+
+/* Garante que o conteúdo fique por cima do fundo */
+.seminovos-header * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Search Mobile - escondido no desktop */
+.nav-search-mobile {
+  display: none;
+  flex: 10;
+  margin: 0 15px;
+}
+
+.search-input-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px; /* Ajuste conforme necessário */
+}
+
+.search-input-mobile {
+  width: 100%;
+  padding: 8px 35px 8px 15px; /* 35px de padding-right para o ícone */
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 35px; /* Ajuste fino da posição direita */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  background: transparent;
+  border: none;
+  padding: 0 15px 0 0;
+  cursor: pointer;
+  font-size: 16px; /* Tamanho do ícone */
+}
+
+.search-icon:hover {
+  color: #495057;
+}
+
+@media (max-width: 768px) {
+  .nav-search-mobile {
+    display: flex;
+  }
+
+  /* Container principal */
+  #vehicles-container {
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Linha que contém os cards */
+  #vehicles-container > .row {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  /* Cada item de coluna */
+  #vehicles-container > .row > [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Card individual */
+  .card {
+    border-radius: 0 !important;
+    border-left: none;
+    border-right: none;
+    box-shadow: none !important;
+  }
+
+
+  /* Imagens do carrossel */
+  .carousel-item img {
+    height: 200px !important;
+  }
+}

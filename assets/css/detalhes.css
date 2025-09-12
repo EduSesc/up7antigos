@@ -1,0 +1,878 @@
+/* Botão Voltar */
+.back-button {
+  margin-bottom: 30px;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-dark);
+  background-color: var(--primary-gold);
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-back:hover {
+  background-color: #d4af37;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Títulos */
+.car-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--primary-gold);
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  color: var(--primary-dark);
+}
+
+.section-title:after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: var(--primary-gold);
+  margin: 5px auto;
+}
+
+/* Preço */
+.price-badge {
+  background-color: rgba(212, 175, 55, 0.2);
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.price-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-gold);
+}
+
+/* Ano */
+.year-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Descrição */
+.description-section {
+  margin: 30px 0;
+}
+
+.description-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-gold);
+}
+
+.car-description {
+  line-height: 1.8;
+  color: black;
+}
+
+/* Botões */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.btn-contact,
+.btn-whatsapp {
+  flex: 1;
+  min-width: 150px;
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-contact {
+  background-color: #fff;
+  color: var(--primary-dark);
+  border: 2px solid #fff;
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: white;
+  border: 2px solid #25d366;
+}
+
+.btn-contact:hover,
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Características */
+.features-card {
+  background-color: #fff;
+}
+
+.features-card h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-dark);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background-color: #e9ecef;
+  transform: translateX(5px);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  color: var(--primary-gold);
+}
+
+.feature-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.feature-value {
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+/* Galeria */
+.swiper {
+  width: 100%;
+  height: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.5rem;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: var(--primary-gold);
+  color: var(--primary-dark);
+}
+
+.swiper-pagination-bullet {
+  background: white;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--primary-gold);
+  opacity: 1;
+}
+
+/* Veículos Sugeridos */
+.suggested-swiper {
+  padding: 20px;
+}
+
+.suggested-slide {
+  height: auto;
+}
+
+.suggested-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.suggested-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.suggested-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.suggested-info {
+  padding: 20px;
+}
+
+.suggested-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--primary-dark);
+}
+
+.suggested-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.suggested-price {
+  font-weight: 700;
+  color: var(--primary-gold);
+}
+
+.lightbox-price:focus,
+.lightbox-whatsapp:focus {
+  outline: 2px solid var(--primary-gold);
+  outline-offset: 2px;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .swiper {
+    height: 400px;
+  }
+
+  .car-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 10px;
+  }
+
+  header {
+    display: none;
+  }
+  .custom-row {
+    padding: 50px 0 0 0;
+  }
+
+  main {
+    padding: 10px 0;
+  }
+
+  .swiper {
+    height: 350px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .details-container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .lightbox-footer {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+    bottom: 15px;
+  }
+
+  .lightbox-price {
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    order: 3; /* Coloca o preço embaixo no mobile */
+  }
+
+  .lightbox-whatsapp {
+    padding: 12px 24px;
+    font-size: 1rem;
+    order: 0; /* Coloca o WhatsApp em cima no mobile */
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .btn-contact,
+  .btn-whatsapp {
+    width: 100%;
+  }
+
+  .swiper {
+    height: 300px;
+  }
+
+  .car-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Container do carrossel */
+/* VEÍCULOS SUGERIDOS - ESTILOS PRINCIPAIS */
+.suggested-swiper {
+  width: 100%;
+  padding: 10px 0 30px;
+  --swiper-spacing: 15px;
+}
+
+.suggested-slide {
+  width: 260px !important;
+  /* Largura fixa para os cards */
+  height: auto;
+  margin-right: var(--swiper-spacing) !important;
+}
+
+.suggested-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  /* Sombra mais difusa */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.suggested-img {
+  width: 100%;
+  height: 160px;
+  /* Altura reduzida para mobile */
+  object-fit: cover;
+}
+
+.suggested-info {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.suggested-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.suggested-meta {
+  margin-top: auto;
+  /* Empurra para baixo */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.suggested-price {
+  font-weight: 700;
+  color: var(--primary-gold);
+  font-size: 0.95rem;
+}
+
+/* NAVEGAÇÃO DO CARROSSEL */
+.suggested-swiper .swiper-button-next,
+.suggested-swiper .swiper-button-prev {
+  color: white;
+  background: var(--primary-gold);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  top: 40%;
+  background: var(--primary-gold);
+  color: var(--primary-dark);
+  border: 2px solid white;
+}
+
+.suggested-swiper .swiper-button-next:after,
+.suggested-swiper .swiper-button-prev:after {
+  font-size: 1rem;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  border-radius: 50%;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-float .whatsapp-icon {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+.whatsapp-float .tooltip {
+  display: none;
+}
+
+/* AJUSTES PARA DESKTOP */
+@media (min-width: 768px) {
+  .suggested-swiper {
+    padding: 20px 0 40px;
+  }
+
+  .suggested-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  .suggested-slide {
+    width: 280px !important;
+  }
+
+  .suggested-img {
+    height: 180px;
+  }
+
+  .suggested-swiper .swiper-button-next,
+  .suggested-swiper .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-gold);
+    color: var(--primary-dark);
+    border: 2px solid white;
+  }
+}
+
+/* AJUSTES PARA MOBILE PEQUENO */
+@media (max-width: 400px) {
+  .suggested-slide {
+    width: 220px !important;
+  }
+
+  .suggested-img {
+    height: 140px;
+  }
+}
+
+/* Lightbox Styles */
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-carousel {
+  width: 90%;
+  height: 80%;
+  max-width: 1200px;
+}
+
+#lightbox-swiper {
+  width: 100%;
+  height: 100%;
+  background-color: transparent !important;
+}
+
+.lightbox-carousel .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent !important;
+}
+
+.lightbox-carousel img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Lightbox navigation buttons */
+.lightbox-button-next,
+.lightbox-button-prev {
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.lightbox-button-next:hover,
+.lightbox-button-prev:hover {
+  background: var(--primary-gold);
+  color: var(--primary-dark);
+}
+
+.lightbox-button-next:after,
+.lightbox-button-prev:after {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Lightbox pagination */
+.lightbox-pagination {
+  bottom: 70px !important;
+}
+
+.lightbox-pagination .swiper-pagination-bullet {
+  background: #d4af37;
+  opacity: 0.6;
+  width: 10px;
+  height: 10px;
+}
+
+.lightbox-pagination .swiper-pagination-bullet-active {
+  background: var(--primary-gold);
+  opacity: 1;
+}
+
+/* Botão voltar no canto superior direito */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Footer fixo dentro do lightbox */
+.lightbox-footer {
+  position: absolute;
+  bottom: 30x;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
+  z-index: 1000;
+  gap: 20px;
+}
+
+.lightbox-price {
+  color: var(--primary-gold);
+  font-size: 2rem;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.15) 0%,
+    rgba(212, 175, 55, 0.25) 100%
+  );
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 20px rgba(212, 175, 55, 0.2) inset;
+  animation: priceGlow 2s ease-in-out infinite alternate;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0; /* Impede que encolha demais */
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(45deg) translateX(-100%);
+  }
+  100% {
+    transform: rotate(45deg) translateX(100%);
+  }
+}
+
+@keyframes priceGlow {
+  0% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+      0 0 20px rgba(212, 175, 55, 0.2) inset;
+  }
+  100% {
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+      0 0 30px rgba(212, 175, 55, 0.3) inset;
+  }
+}
+
+.lightbox-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.lightbox-whatsapp:hover {
+  background: linear-gradient(135deg, #128c7e 0%, #0c6b52 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+
+/* Ações no topo do lightbox */
+.lightbox-actions {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 10000;
+}
+
+.lightbox-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* WhatsApp */
+.lightbox-whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+.lightbox-whatsapp:hover {
+  transform: scale(1.1);
+}
+
+/* Compartilhar */
+.lightbox-share {
+  background: var(--primary-gold);
+  color: var(--primary-dark);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+.lightbox-share:hover {
+  transform: scale(1.1);
+}
+
+/* Botão de Compartilhar */
+.share-button {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background: var(--primary-gold);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-dark);
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.share-button:hover {
+  transform: scale(1.1);
+}
+
+.share-options {
+  position: fixed;
+  bottom: 160px;
+  right: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.share-options.active {
+  display: flex;
+}
+
+.share-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.share-option:hover {
+  background: #f0f0f0;
+}
+
+.share-option i {
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+}
+
+.share-option.facebook i {
+  color: #3b5998;
+}
+
+.share-option.whatsapp i {
+  color: #25d366;
+}
+
+.share-option.twitter i {
+  color: #1da1f2;
+}
+
+.share-option.email i {
+  color: #d44638;
+}
+
+.share-option.link i {
+  color: #6c757d;
+}
+
+.back-button {
+  position: relative;
+  z-index: 1100; /* fica acima do nav */
+  margin-top: 80px; /* empurra pra baixo no desktop */
+  margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .back-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    margin: 0;
+    z-index: 1100;
+  }
+
+  .btn-back {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
